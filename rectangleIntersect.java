@@ -49,30 +49,30 @@ public class rectangleIntersect{
     }
     
     public void getInputs(){ // Retrieve user inputs
-        String r1Input;
+        String r1Input; // String holders for user inputs
         String r2Input;
 
-        System.out.print("Enter r1's center x-, y-coordinates, width and height: ");
-        r1Input = scanner.nextLine();
-        String[] r1Inputs = r1Input.split(" ");
-        RectangleA.centerX = Double.parseDouble(r1Inputs[0]);
+        System.out.print("Enter r1's center x-, y-coordinates, width and height: "); // Get r1 inputs
+        r1Input = scanner.nextLine(); // Get next line to use as input
+        String[] r1Inputs = r1Input.split(" "); // Split line by spaces to array
+        RectangleA.centerX = Double.parseDouble(r1Inputs[0]); // Store r1 inputs into the rectangle object
         RectangleA.centerY = Double.parseDouble(r1Inputs[1]);
         RectangleA.height = Double.parseDouble(r1Inputs[2]);
         RectangleA.width = Double.parseDouble(r1Inputs[3]);
-        RectangleA.checkCorners();
+        RectangleA.checkCorners(); // Check corner points by inputted values
 
         System.out.print("Enter r2's center x-, y-coordinates, width and height: ");
-        r2Input = scanner.nextLine();
-        String[] r2Inputs = r2Input.split(" ");
-        RectangleB.centerX = Double.parseDouble(r2Inputs[0]);
+        r2Input = scanner.nextLine(); // Get next line to use as input
+        String[] r2Inputs = r2Input.split(" "); // Split line by spaces to array
+        RectangleB.centerX = Double.parseDouble(r2Inputs[0]); // Store r2 inputs into the rectangle object
         RectangleB.centerY = Double.parseDouble(r2Inputs[1]);
         RectangleB.height = Double.parseDouble(r2Inputs[2]);
         RectangleB.width = Double.parseDouble(r2Inputs[3]);
-        RectangleB.checkCorners();
+        RectangleB.checkCorners(); // Check corner points by inputted values
     }
     
-    public static void main(String[] args){
-        rectangleIntersect myObj = new rectangleIntersect();
+    public static void main(String[] args){ // Main function
+        rectangleIntersect myObj = new rectangleIntersect(); // Create rectangleintersect object
         myObj.getInputs();
         myObj.checkIntersects();
     }
