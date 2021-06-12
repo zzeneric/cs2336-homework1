@@ -1,34 +1,36 @@
-import java.util.Scanner;
+// Raghav Pillai, 6/10/21
+
+import java.util.Scanner; // Import scanner for input
 
 public class rectangleIntersect{
     class Rectangle{ // Rectangle class to store rectangle information
-        double height, width, centerX, centerY;
-        double[] bottomLeft, bottomRight, topLeft, topRight;
+        double height, width, centerX, centerY; // Values for each rectangle
+        double[] bottomLeft, bottomRight, topLeft, topRight; // Array of double values (x and y as 0 and 1)
 
         public void checkCorners(){ // X = [0], Y = [1]
             double blx = centerX - (width/2);
             double bly = centerY - (height/2);
-            bottomLeft = new double[]{blx,bly};
+            bottomLeft = new double[]{blx,bly}; // Bottom left array
 
             double brx = centerX + (width/2);
             double bry = centerY - (height/2);
-            bottomRight = new double[]{brx,bry};
+            bottomRight = new double[]{brx,bry}; // Bottom right array
 
             double tlx = centerX - (width/2);
             double tly = centerY + (height/2);
-            topLeft = new double[]{tlx,tly};
+            topLeft = new double[]{tlx,tly}; // Top left array
 
             double trx = centerX + (width/2);
             double ttry = centerY + (height/2); // Need ttry because try is a thing
-            topRight = new double[]{trx,ttry};
+            topRight = new double[]{trx,ttry}; // Top right array
         }
     }
     
-    Scanner scanner = new Scanner(System.in);
-    Rectangle RectangleA = new Rectangle();
-    Rectangle RectangleB = new Rectangle();
+    Scanner scanner = new Scanner(System.in); // Input scanner
+    Rectangle RectangleA = new Rectangle(); // Rectangle A
+    Rectangle RectangleB = new Rectangle(); // Rectangle B
 
-    public void checkIntersects(){
+    public void checkIntersects(){ // Check intersects for each rectangle
         if(RectangleA.topRight[0] == RectangleB.topRight[0] && RectangleA.topLeft[0] == RectangleB.topLeft[0] 
         && RectangleA.topLeft[1] == RectangleB.topLeft[1] && RectangleA.bottomLeft[1] == RectangleB.bottomLeft[1]) { // Identical
             System.out.print("r1 and r2 are indentical");
@@ -46,7 +48,7 @@ public class rectangleIntersect{
         }
     }
     
-    public void getInputs(){
+    public void getInputs(){ // Retrieve user inputs
         String r1Input;
         String r2Input;
 
